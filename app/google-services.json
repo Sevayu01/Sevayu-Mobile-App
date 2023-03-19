@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157003322748",
+    "project_id": "sevayu-7446b",
+    "storage_bucket": "sevayu-7446b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157003322748:android:f6a786b2bdd235722700f9",
+        "android_client_info": {
+          "package_name": "com.example.sevayu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157003322748-td3i3mnhdtvd5pjkrm72rfhrkh01l8tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg_1MrqN4LhhFnmam_Mc5i0mvuqA5RAmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157003322748-td3i3mnhdtvd5pjkrm72rfhrkh01l8tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
