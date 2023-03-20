@@ -4,15 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    app:cardCornerRadius="8dp"
+    android:minWidth="100dp"
+    app:cardCornerRadius="12dp"
     app:cardElevation="8dp"
-    android:layout_margin="14dp"
+    android:layout_margin="12dp"
     app:cardBackgroundColor="#F8BBD0">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:minWidth="150dp"
         android:weightSum="1"
         android:padding="12dp">
         <TextView
@@ -22,7 +24,7 @@
             android:layout_weight="0.2"
             android:text="Hospital"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/rv_department"
@@ -33,15 +35,15 @@
             android:textColor="#FFFFFF"
             android:gravity="center"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/rv_time"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.1"
             android:text="Time"
-            android:textColor="#888888"
-            android:textSize="12sp"/>
+            android:textColor="#424242"
+            android:textSize="14sp"/>
         <TextView
             android:id="@+id/rv_date"
             android:layout_width="match_parent"
@@ -50,6 +52,6 @@
             android:text="Date"
             android:textColor="#FFFFFF"
             android:gravity="bottom"
-            android:textSize="12sp"/>
+            android:textSize="14sp"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

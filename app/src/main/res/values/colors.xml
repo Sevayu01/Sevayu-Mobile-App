@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <array name="rainbow">
-        <item>#F8BBD0</item>
-        <item>#C8E6C9</item>
-        <item>#B2EBF2</item>
-        <item>#FFE0B2</item>
+        <item>#F06292</item>
+        <item>#81C784</item>
+        <item>#4DD0E1</item>
+        <item>#FFB74D</item>
     </array>
 </resources>

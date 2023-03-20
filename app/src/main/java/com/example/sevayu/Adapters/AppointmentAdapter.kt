@@ -34,6 +34,7 @@ class AppointmentAdapter(private val mList: List<Appointments>,val rainbow:Array
         holder.itemView.setBackgroundColor(Color.parseColor(rainbow[position % rainbow.size] ))
 
 
+
     }
 
     // return the number of the items in the list

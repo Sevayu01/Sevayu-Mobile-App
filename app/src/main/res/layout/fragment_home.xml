@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="1"
+    android:background="#F1F1F1"
     tools:context=".fragments.HomeFragment">
 
     <LinearLayout
@@ -15,6 +16,7 @@
         android:orientation="horizontal"
         android:weightSum="1"
         android:padding="8dp"
+        android:background="#FFFFFF"
         >
         <ImageView
             android:layout_width="0dp"
@@ -46,10 +48,19 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home"
             android:layout_height="0dp"
-            android:layout_weight="0.3"
+            android:layout_weight="0.35"
             android:layout_width="match_parent"
             android:orientation="vertical"
             />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_blogHome"
+        android:layout_height="0dp"
+        android:layout_weight="0.55"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:backgroundTint="#C6C6C6"
+        />
 
 
 </LinearLayout>
