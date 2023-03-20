@@ -1,3 +1,4 @@
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.util.Log.e
 import android.view.LayoutInflater
@@ -31,7 +32,7 @@ class AppointmentAdapter(private val mList: List<Appointments>,val rainbow:Array
         holder.time.text = ItemsViewModel.time
         holder.date.text = ItemsViewModel.date
 
-        holder.itemView.setBackgroundColor(Color.parseColor(rainbow[position % rainbow.size] ))
+        holder.itemView.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(rainbow[position % rainbow.size])) )
 
 
 
