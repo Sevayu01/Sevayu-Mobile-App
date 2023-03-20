@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <array name="rainbow">
+        <item>#F8BBD0</item>
+        <item>#C8E6C9</item>
+        <item>#B2EBF2</item>
+        <item>#FFE0B2</item>
+    </array>
 </resources>

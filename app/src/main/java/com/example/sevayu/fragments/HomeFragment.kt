@@ -1,60 +1,61 @@
 package com.example.sevayu.fragments
 
+import AppointmentAdapter
 import android.os.Bundle
+import android.util.Log
+import android.util.Log.e
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.inflate
 import android.view.ViewGroup
+import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
+import androidx.core.content.res.ComplexColorCompat.inflate
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sevayu.R
+import com.example.sevayu.models.Appointments
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        view.findViewById<RecyclerView>(R.id.rv_home)?.let { rv ->
+
+            var colors = arrayOf("#F8BBD0","#C8E6C9","#B2EBF2","#FFE0B2")
+
+
+            var dummyList= listOf(Appointments("AIIMS","Cancer","3:30-6:30","14 March,2023")
+                ,Appointments("PMCH","Gyno","12:30-6:30","16 March,2023")
+                ,Appointments("Apollo","Ortho","4:00-7:30","11 March,2023")
+                ,Appointments("Max","Pedia","2:00-7:30","1 March,2023"))
+
+
+            rv.layoutManager=LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+            rv.adapter=AppointmentAdapter(dummyList,colors)
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
+
+//    private fun setupRV() {
+//        var dummyList= listOf(Appointments("aiims","cancer","3:30-6:30","14 March,2023")
+//            ,Appointments("pmch","gyno","12:30-6:30","16 March,2023")
+//            ,Appointments("Apollo","Ortho","4:00-7:30","11 March,2023"))
+//
+//        Log.e("here", dummyList.toString())
+//        requireActivity().findViewById<RecyclerView>(R.id.rv_home)?.adapter=AppointmentAdapter(dummyList )
+//        requireActivity().findViewById<RecyclerView>(R.id.rv_home)?.layoutManager=LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
+//    }
+
+
 }
