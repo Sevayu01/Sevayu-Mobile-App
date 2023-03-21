@@ -1,60 +1,107 @@
 package com.example.sevayu.fragments
 
+import AppointmentAdapter
 import android.os.Bundle
+import android.util.Log
+import android.util.Log.e
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.inflate
 import android.view.ViewGroup
+import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
+import androidx.core.content.res.ComplexColorCompat.inflate
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.sevayu.Adapters.BlogAdapter
 import com.example.sevayu.R
+import com.example.sevayu.models.Appointments
+import com.example.sevayu.models.Blog
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        setupDeptRV(view)
+        setupBlogRv(view)
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+
+
+    private fun setupDeptRV(view: View) {
+        view.findViewById<RecyclerView>(R.id.rv_home)?.let { rv ->
+
+            var colors = arrayOf("#F06292","#81C784","#4DD0E1","#FFB74D")
+
+
+            var dummyList= listOf(Appointments("AIIMS","Cancer","3:30-6:30","14 March,2023")
+                ,Appointments("PMCH","Gyno","12:30-6:30","16 March,2023")
+                ,Appointments("Apollo","Ortho","4:00-7:30","11 March,2023")
+                ,Appointments("Max","Pedia","2:00-7:30","1 March,2023"))
+
+
+            rv.layoutManager=LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+            rv.adapter=AppointmentAdapter(dummyList,colors)
+        }
     }
+
+    private fun setupBlogRv(view: View){
+
+        view.findViewById<RecyclerView>(R.id.rv_blogHome)?.let { rv ->
+            var dummyList = listOf(
+                Blog(
+                    "Dr. Praneki",
+                    "Why Non veg food very good",
+                    "20 March 2023",
+                    "coz it tastes good lmao and veg food is kinda mid"
+                ),
+                Blog(
+                    "Dr Yogi",
+                    "Yoga cures cancer",
+                    "2 March 2023",
+                    "Waking up every morning at 6:00AM, Suryanamaskar and a fresh cup of gomutra can cure cancer"
+                ),
+                Blog(
+                    "WHO",
+                    "Medical discovery in Africa",
+                    "26 Nov 2008",
+                    "Scientists discover the main cause of lower health index in central african countries and to everyone's surprise it's poverty."
+                ),
+                Blog(
+                    "Dr Maro",
+                    "Premature ejaculation can change your life",
+                    "6 September 2023",
+                    "will let me satisfy your soul mate"
+                ),
+                Blog(
+                    "Dr. Praneki",
+                    "Why Non veg food very good",
+                    "20 March 2023",
+                    "coz it tastes good lmao and veg food is kinda mid"
+                ),
+                Blog(
+                    "Dr Yogi",
+                    "Yoga cures cancer",
+                    "2 March 2023",
+                    "Waking up every morning at 6:00AM, Suryanamaskar and a fresh cup of gomutra can cure cancer"
+                )
+            )
+            rv.layoutManager= StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+            rv.adapter= BlogAdapter(dummyList)
+
+
+        }
+    }
+
+
 }
