@@ -6,14 +6,14 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.sevayu.fragments.HomeFragment"
+        android:name="com.example.sevayu.ui.Main.fragments.HomeFragment"
         android:label="homeFragment" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.sevayu.fragments.SearchFragment"
+        android:name="com.example.sevayu.ui.Main.fragments.SearchFragment"
         android:label="searchFragment" />
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.example.sevayu.fragments.UserFragment"
+        android:name="com.example.sevayu.ui.Main.fragments.UserFragment"
         android:label="searchFragment" />
 </navigation>

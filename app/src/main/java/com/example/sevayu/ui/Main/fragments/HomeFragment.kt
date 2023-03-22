@@ -1,21 +1,15 @@
-package com.example.sevayu.fragments
+package com.example.sevayu.ui.Main.fragments
 
-import AppointmentAdapter
+import com.example.sevayu.ui.Main.AppointmentAdapter
 import android.os.Bundle
-import android.util.Log
-import android.util.Log.e
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
-import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
-import androidx.core.content.res.ComplexColorCompat.inflate
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.sevayu.Adapters.BlogAdapter
+import com.example.sevayu.ui.Main.BlogAdapter
 import com.example.sevayu.R
 import com.example.sevayu.models.Appointments
 import com.example.sevayu.models.Blog
@@ -51,7 +45,7 @@ class HomeFragment : Fragment() {
 
 
             rv.layoutManager=LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
-            rv.adapter=AppointmentAdapter(dummyList,colors)
+            rv.adapter= AppointmentAdapter(dummyList,colors)
         }
     }
 
