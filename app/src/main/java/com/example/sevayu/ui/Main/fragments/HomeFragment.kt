@@ -2,10 +2,16 @@ package com.example.sevayu.ui.Main.fragments
 
 import com.example.sevayu.ui.Main.AppointmentAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
+import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -13,9 +19,15 @@ import com.example.sevayu.ui.Main.BlogAdapter
 import com.example.sevayu.R
 import com.example.sevayu.models.Appointments
 import com.example.sevayu.models.Blog
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import java.util.*
 
 
 class HomeFragment : Fragment() {
+    private var fusedLocationClient: FusedLocationProviderClient? = null
+    private var lastLocation: Location? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +37,9 @@ class HomeFragment : Fragment() {
 
         setupDeptRV(view)
         setupBlogRv(view)
+
+        checkGPS()
+
 
         return view
     }
@@ -96,6 +111,91 @@ class HomeFragment : Fragment() {
 
         }
     }
+
+    private fun getAddress(lat: Double, lng: Double): String {
+        val geocoder = Geocoder(requireContext(), Locale.getDefault())
+        val addresses:List<Address> = geocoder.getFromLocation(lat, lng, 1)
+
+        if (addresses != null && addresses.size > 0) {
+            val address: String = addresses.get(0)
+                .getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+            val city: String = addresses.get(0).getLocality()
+            val state: String = addresses.get(0).getAdminArea()
+            val country: String = addresses.get(0).getCountryName()
+            val postalCode: String = addresses.get(0).getPostalCode()
+            val knownName: String =
+                addresses.get(0).getFeatureName() // Only if available else return NULL
+            Log.d("add", "getAddress:  address$address")
+            Log.d("add", "getAddress:  city$city")
+            Log.d("add", "getAddress:  state$state")
+            Log.d("add", "getAddress:  postalCode$postalCode")
+            Log.d("add","getAddress:  knownName$knownName")
+
+            view?.findViewById<TextView>(R.id.tv_location)?.text=city
+        }
+
+
+        return addresses[0].getAddressLine(0)
+    }
+    private fun checkGPS(){
+        if (ContextCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION) !==
+            PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+                requestPermissions(
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
+            } else {
+                requestPermissions(
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
+            }
+
+        }else{
+            getLastLocation()
+        }
+
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun getLastLocation(){
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
+
+        fusedLocationClient?.lastLocation!!.addOnCompleteListener(requireActivity()) { task ->
+            if(task.isSuccessful){
+                val address:String=getAddress(task.result.latitude,task.result.longitude)
+                e("address",address)
+            }else{
+                e("addressE",task.result.toString())
+            }
+
+        }
+
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
+                                            grantResults: IntArray) {
+
+        when (requestCode) {
+            1 -> {
+
+                if (grantResults.isNotEmpty() && grantResults[0] ==
+                    PackageManager.PERMISSION_GRANTED) {
+                    if ((ContextCompat.checkSelfPermission(requireContext(),
+                            Manifest.permission.ACCESS_FINE_LOCATION) ===
+                                PackageManager.PERMISSION_GRANTED)) {
+                        getLastLocation()
+                        Toast.makeText(requireContext(), "Permission Granted", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Permission Denied", Toast.LENGTH_SHORT).show()
+                }
+                return
+            }
+        }
+    }
+
 
 
 }
