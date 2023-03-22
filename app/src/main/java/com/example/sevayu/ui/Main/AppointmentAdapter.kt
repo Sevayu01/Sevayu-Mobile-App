@@ -1,10 +1,10 @@
+package com.example.sevayu.ui.Main
+
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sevayu.R

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/activity_splash_acctivity_scene"
+    tools:context=".ui.splashScreen.splashActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgrountLayout"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bacckground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/SevayuLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sevayu_logo_asset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/SevayuLogoWhite"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sevayu_logo_asset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/sevayuName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sevayu"
+        android:textStyle="italic"
+        android:textColor="#292828"
+        android:textSize="35sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
