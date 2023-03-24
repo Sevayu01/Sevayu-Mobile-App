@@ -1,4 +1,4 @@
-package com.example.sevayu.fragments
+package com.example.sevayu.ui.Main.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

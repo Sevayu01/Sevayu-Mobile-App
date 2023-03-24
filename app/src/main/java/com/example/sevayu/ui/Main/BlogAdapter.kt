@@ -1,4 +1,4 @@
-package com.example.sevayu.Adapters
+package com.example.sevayu.ui.Main
 
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
