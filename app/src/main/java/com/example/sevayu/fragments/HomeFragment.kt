@@ -3,11 +3,17 @@ package com.example.sevayu.fragments
 import AppointmentAdapter
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
+import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.util.Log.e
 import android.view.LayoutInflater
@@ -15,9 +21,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -27,6 +37,7 @@ import com.example.sevayu.models.Appointments
 import com.example.sevayu.models.Blog
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.coroutines.launch
 import java.util.*
 
 
@@ -35,6 +46,7 @@ class HomeFragment : Fragment() {
     private var lastLocation: Location? = null
 
 
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,8 +56,7 @@ class HomeFragment : Fragment() {
         setupDeptRV(view)
         setupBlogRv(view)
 
-        checkGPS()
-
+        isLocationEnabled(requireContext())
 
         return view
     }
@@ -200,6 +211,28 @@ class HomeFragment : Fragment() {
                 return
             }
         }
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.P)
+    private fun isLocationEnabled(context: Context) {
+        val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+        if(!locationManager.isLocationEnabled){
+            AlertDialog.Builder(context).setTitle("GPS not enabled")
+                .setPositiveButton("enable") { dialog, which ->
+                    val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+                    startForResult.launch(intent)
+                }.show()
+        }else{
+            checkGPS()
+        }
+
+    }
+
+    val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            _: ActivityResult ->
+            getLastLocation()
     }
 
 
