@@ -13,12 +13,18 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/bacckground.xml" value="0.2545" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/edit_button_border.xml" value="0.173" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2565" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2555" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_baseline_place_24.xml" value="0.2555" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2555" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2555" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_phone.xml" value="0.2555" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/ic_sevayu.xml" value="0.2555" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/otp_input_border.xml" value="0.2545" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/sevay.xml" value="0.2555" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/drawable/sevayu_logo_asset.xml" value="0.2555" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/activity_otp.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/activity_splash_acctivity.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/activity_otp.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/activity_splash_acctivity.xml" value="0.16" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/fragment_search.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Sevayu-Mobile-App/app/src/main/res/layout/fragment_user.xml" value="0.2" />

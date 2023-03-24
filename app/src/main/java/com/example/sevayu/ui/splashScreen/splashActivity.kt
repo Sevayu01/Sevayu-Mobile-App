@@ -1,8 +1,12 @@
 package com.example.sevayu.ui.splashScreen
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.transition.Explode
+import android.view.Window
 import android.view.WindowManager
 import android.view.animation.AlphaAnimation
 import androidx.appcompat.app.AppCompatActivity
@@ -24,10 +28,17 @@ class splashActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+//        window.setExitTransition(null)
 
+        var logo = binding?.SevayuLogo
         Handler().postDelayed({
 
-            startActivity(Intent(this,otpActivity::class.java))
+            var intent = Intent(this,otpActivity::class.java)
+
+//            var options = ActivityOptions.makeSceneTransitionAnimation(this,logo,"Sevayu_logo")
+
+//            startActivity(intent,options.toBundle())
+            startActivity(intent)
             finish()
         },2000)
 

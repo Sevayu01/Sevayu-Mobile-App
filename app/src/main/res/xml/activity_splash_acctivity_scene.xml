@@ -68,7 +68,9 @@
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:scaleX="0"
-            android:scaleY="0" />
+            android:scaleY="0"
+            motion:layout_constraintVertical_bias="0.499"
+            motion:layout_constraintHorizontal_bias="0.498" />
         <Constraint
             android:id="@+id/SevayuLogo"
             motion:layout_constraintEnd_toEndOf="parent"

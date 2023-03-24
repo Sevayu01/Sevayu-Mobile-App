@@ -1,37 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.otp.otpActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:transitionName="Sevayu_logo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/sevayu_logo_asset"
+        android:layout_weight="7"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <TextView
+        android:id="@+id/motoText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Find a Better \n Treatment For Yourself"
+        android:textColor="#201F1F"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_weight="5"/>
+
     <TextView
         android:id="@+id/otpTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter your mobile number"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="50dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center"/>
-
-    <EditText
-        android:id="@+id/etNumber"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Enter your mobile number"
+        android:textColor="@color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="2"/>
+
+
+    <LinearLayout
+        android:id="@+id/otpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_weight="3">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpInput1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/otp_input_border"
+            android:layout_margin="1dp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpInput2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:layout_margin="1dp"
+            android:background="@drawable/otp_input_border"
+            android:textStyle="bold"/>
+
+        android:id="@+id/otpInput1"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpInput3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/otp_input_border"
+            android:layout_margin="1dp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpInput4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:layout_margin="1dp"
+            android:background="@drawable/otp_input_border"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpInput5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:layout_margin="1dp"
+            android:background="@drawable/otp_input_border"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpInput6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:layout_margin="1dp"
+            android:background="@drawable/otp_input_border"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etNumber"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="15dp"
+        android:hint="Mobile No"
         android:inputType="phone"
-        android:hint="Mobile No"/>
+        android:layout_weight="3"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
 
     <Button
         android:id="@+id/DoneBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/acrivity_card_design"
-        android:layout_marginStart="50dp"
-        android:text="send"/>
+        android:text="Send OTP"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_weight="2.5"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
 
 </LinearLayout>
