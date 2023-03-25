@@ -1,4 +1,4 @@
-package com.example.sevayu.ui.Main
+package com.example.sevayu.ui.Main.adapters
 
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sevayu.R
 import com.example.sevayu.models.Appointments
@@ -33,6 +34,9 @@ class AppointmentAdapter(private val mList: List<Appointments>,val rainbow:Array
         holder.date.text = ItemsViewModel.date
 
         holder.itemView.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(rainbow[position % rainbow.size])) )
+        holder.itemView.setOnClickListener {
+            holder.itemView.findNavController().navigate(R.id.action_homeFragment_to_hospitalFragment)
+        }
 
 
 
