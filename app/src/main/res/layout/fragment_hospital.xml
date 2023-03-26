@@ -67,7 +67,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="12dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,13 +123,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tests provided"
+                android:text="Tests "
                 android:layout_margin="16dp"
                 android:textSize="16sp"
                 android:textColor="#858383"
                 />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_tests"
+                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
@@ -147,10 +147,9 @@
                 android:id="@+id/rv_DepartMain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="12dp"
                 android:nestedScrollingEnabled="false"
                 />
-
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

@@ -30,8 +30,9 @@ class HospitalFragment : Fragment() {
 
     private fun setupDepartRv(view: View) {
         view.findViewById<RecyclerView>(R.id.rv_DepartMain)?.let {rv->
+            var colors = arrayOf("#F06292","#81C784","#4DD0E1","#FFB74D")
             var dummyList = listOf<Department>(Department("Cardiology"),Department("Orthopedics"),Department("General"))
-            rv.adapter= DepartmentAdapter(dummyList,requireContext())
+            rv.adapter= DepartmentAdapter(dummyList,colors)
             e("le","le")
             rv.layoutManager= GridLayoutManager(activity,2)
         }

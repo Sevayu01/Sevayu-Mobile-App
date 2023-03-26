@@ -27,5 +27,13 @@
     <fragment
         android:id="@+id/hospitalFragment"
         android:name="com.example.sevayu.ui.Main.fragments.HospitalFragment"
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_hospitalFragment_to_appointmentFinalFragment"
+            app:destination="@id/appointmentFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentFinalFragment"
+        android:name="com.example.sevayu.ui.Main.fragments.AppointmentFinalFragment"
         android:label="searchFragment" />
 </navigation>
