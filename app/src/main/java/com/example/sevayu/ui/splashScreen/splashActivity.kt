@@ -11,6 +11,7 @@ import android.view.WindowManager
 import android.view.animation.AlphaAnimation
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sevayu.databinding.ActivitySplashAcctivityBinding
+import com.example.sevayu.ui.Main.MainActivity
 import com.example.sevayu.ui.otp.otpActivity
 
 
@@ -33,7 +34,7 @@ class splashActivity : AppCompatActivity() {
         var logo = binding?.SevayuLogo
         Handler().postDelayed({
 
-            var intent = Intent(this,otpActivity::class.java)
+            var intent = Intent(this,MainActivity::class.java)
 
 //            var options = ActivityOptions.makeSceneTransitionAnimation(this,logo,"Sevayu_logo")
 

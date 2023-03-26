@@ -1,6 +1,5 @@
 package com.example.sevayu.fragments
 
-import AppointmentAdapter
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -31,10 +30,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.sevayu.Adapters.BlogAdapter
 import com.example.sevayu.R
 import com.example.sevayu.models.Appointments
 import com.example.sevayu.models.Blog
+import com.example.sevayu.ui.Main.AppointmentAdapter
+import com.example.sevayu.ui.Main.BlogAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.launch
@@ -77,7 +77,7 @@ class HomeFragment : Fragment() {
 
 
             rv.layoutManager=LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
-            rv.adapter=AppointmentAdapter(dummyList,colors)
+            rv.adapter= AppointmentAdapter(dummyList,colors)
         }
     }
 
