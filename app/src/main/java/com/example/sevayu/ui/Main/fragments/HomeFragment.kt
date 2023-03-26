@@ -1,4 +1,4 @@
-package com.example.sevayu.fragments
+package com.example.sevayu.ui.Main.fragments
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -26,18 +26,16 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.sevayu.R
 import com.example.sevayu.models.Appointments
 import com.example.sevayu.models.Blog
-import com.example.sevayu.ui.Main.AppointmentAdapter
-import com.example.sevayu.ui.Main.BlogAdapter
+import com.example.sevayu.ui.Main.adapters.AppointmentAdapter
+import com.example.sevayu.ui.Main.adapters.BlogAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import kotlinx.coroutines.launch
 import java.util.*
 
 
