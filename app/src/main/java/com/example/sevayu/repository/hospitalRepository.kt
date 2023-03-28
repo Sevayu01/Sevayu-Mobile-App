@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class hospitalRepository @Inject constructor(private val sevayuAPI: SevayuAPI) {
 
-    suspend fun searchHospital(query : String) = sevayuAPI.getDataList()
+    suspend fun searchHospital(query : String) = sevayuAPI.getDataList(query)
 
 }

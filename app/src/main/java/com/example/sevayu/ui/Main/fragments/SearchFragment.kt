@@ -11,12 +11,12 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sevayu.databinding.FragmentSearchBinding
-import com.example.sevayu.di.Constants
 import com.example.sevayu.models.game
-import com.example.sevayu.models.gameList
 import com.example.sevayu.repository.Resource
 import com.example.sevayu.ui.Main.MainViewModal
+import com.example.sevayu.ui.Main.adapters.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,7 +24,8 @@ class SearchFragment : Fragment() {
 
     var binding: FragmentSearchBinding? = null
     lateinit var viewModal: MainViewModal
-    lateinit var gameList: ArrayList<game>
+    var gameList: ArrayList<game> = ArrayList()
+    lateinit var adapter : SearchAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +37,7 @@ class SearchFragment : Fragment() {
 
         var textChangeVar = 0
         setObservers()
+        setUpSearchResultRecyclerView()
 
         binding?.searchString?.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
@@ -50,8 +52,12 @@ class SearchFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 textChangeVar++
-                if (textChangeVar == 5) {
-                    Toast.makeText(context, "changed Text : ${newText}", Toast.LENGTH_SHORT).show()
+                if (textChangeVar == 3) {
+                    Log.e("SF req send" , "SF")
+                    if (newText != null) {
+                        val query = binding?.searchString?.query
+                        viewModal.getHospitals(query.toString())
+                    }
                     textChangeVar = 0
                 }
 
@@ -61,6 +67,14 @@ class SearchFragment : Fragment() {
         })
 
         return binding?.root
+    }
+
+    private fun setUpSearchResultRecyclerView() {
+        adapter = SearchAdapter(gameList)
+        binding?.searchResultRv?.layoutManager = LinearLayoutManager(requireContext())
+        binding?.searchResultRv?.setHasFixedSize(true)
+
+        binding?.searchResultRv?.adapter = adapter
     }
 
     @SuppressLint("LongLogTag")
@@ -81,6 +95,9 @@ class SearchFragment : Fragment() {
                         Toast.makeText(requireContext(), "Result aa gaya ${gameList}",
                             Toast.LENGTH_SHORT)
                         Log.e("Search Fragment Result aa gaya" , gameList.toString())
+                        binding?.searchResultRv?.smoothScrollBy(0,gameList.size - 1)
+                        adapter.submitList(gameList)
+
                     }
                     Resource.Status.ERROR -> {
                         binding?.emptyTextView?.visibility = View.VISIBLE
