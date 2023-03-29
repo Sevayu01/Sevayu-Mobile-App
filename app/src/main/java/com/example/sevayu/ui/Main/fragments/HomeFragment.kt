@@ -230,7 +230,7 @@ class HomeFragment : Fragment() {
 
     val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             _: ActivityResult ->
-            getLastLocation()
+//            getLastLocation()
     }
 
 
