@@ -17,7 +17,7 @@ class SearchAdapter(private var searchData: ArrayList<game>) :
         var desc = binding.searchResultDesc
     }
 
-    class DiffUtils : androidx.recyclerview.widget.DiffUtil.ItemCallback<game>(){
+    class DiffUtils : DiffUtil.ItemCallback<game>(){
         override fun areItemsTheSame(oldItem: game, newItem: game): Boolean {
             return oldItem.id == newItem.id
         }
@@ -41,5 +41,9 @@ class SearchAdapter(private var searchData: ArrayList<game>) :
 
         holder.title.text = model.title
         holder.desc.text = model.plot.subSequence(0,60)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return super.getItemViewType(position)
     }
 }
