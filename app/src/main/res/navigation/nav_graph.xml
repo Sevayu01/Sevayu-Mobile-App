@@ -35,5 +35,9 @@
     <fragment
         android:id="@+id/appointmentFinalFragment"
         android:name="com.example.sevayu.ui.Main.fragments.AppointmentFinalFragment"
-        android:label="searchFragment" />
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_appointmentFinalFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
 </navigation>
