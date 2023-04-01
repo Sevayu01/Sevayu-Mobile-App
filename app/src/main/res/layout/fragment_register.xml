@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Authentication.authFragments.RegisterFragment">
+
+
+    <TextView
+        android:id="@+id/signup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="155dp"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="41dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_person_24"
+        android:drawablePadding="25dp"
+        android:hint="Username"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginStart="36sp"
+        android:layout_marginEnd="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_title" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="25dp"
+        android:hint="Email"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginStart="36sp"
+        android:layout_marginEnd="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etpass"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="25dp"
+        android:hint="Password"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginStart="36sp"
+        android:layout_marginEnd="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etZipCode"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="25dp"
+        android:hint="Confire Password"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginStart="36sp"
+        android:layout_marginEnd="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etpass" />
+
+    <Button
+        android:id="@+id/DoneBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="91dp"
+        android:background="@drawable/acrivity_card_design"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="36sp"
+        android:layout_marginEnd="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etZipCode" />
+
+    <TextView
+        android:id="@+id/goToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already Have account - Login"
+        android:textColor="#6A0025"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DoneBtn"
+        app:layout_constraintVertical_bias="0.201" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,10 +15,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.RemoteViews
-import androidx.core.content.ContextCompat.getSystemService
-import com.example.sevayu.MainActivity
 import com.example.sevayu.R
+import com.example.sevayu.ui.Main.MainActivity
 
 class AppointmentFinalFragment : Fragment() {
     lateinit var notificationManager: NotificationManager
