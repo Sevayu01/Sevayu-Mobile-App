@@ -178,8 +178,8 @@ class HomeFragment : Fragment() {
 
         fusedLocationClient?.lastLocation!!.addOnCompleteListener(requireActivity()) { task ->
             if(task.isSuccessful){
-                val address:String=getAddress(task.result.latitude,task.result.longitude)
-                e("address",address)
+//                val address:String=getAddress(task.result.latitude,task.result.longitude)
+//                e("address",address)
             }else{
                 e("addressE",task.result.toString())
             }

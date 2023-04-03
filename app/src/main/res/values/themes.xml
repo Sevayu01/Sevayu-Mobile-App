@@ -23,7 +23,5 @@
         <item name="android:windowSharedElementExitTransition">
             @transition/change_image_transform</item>
 
-        <item name="android:windowBackground">@color/white</item>
-        <item name="android:colorBackground">@color/white</item>
     </style>
 </resources>

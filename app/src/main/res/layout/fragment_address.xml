@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Authentication.authFragments.AddressFragment">
+
+
+    <TextView
+        android:id="@+id/addAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginEnd="178dp"
+        android:text="Add Address"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etLocality"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="57dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_person_24"
+        android:drawablePadding="25dp"
+        android:hint="Locality"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addAddress" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="25dp"
+        android:hint="City"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLocality" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etState"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="25dp"
+        android:hint="State"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCity" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etZipCode"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/edit_button_border"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="25dp"
+        android:hint="ZipCode"
+        android:inputType="text"
+        android:textSize="25sp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etState" />
+
+    <Button
+        android:id="@+id/AddBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="79dp"
+        android:background="@drawable/acrivity_card_design"
+        android:text="Add"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etZipCode"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
