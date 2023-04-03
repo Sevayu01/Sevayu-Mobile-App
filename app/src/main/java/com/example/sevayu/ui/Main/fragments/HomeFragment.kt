@@ -1,6 +1,5 @@
-package com.example.sevayu.fragments
+package com.example.sevayu.ui.Main.fragments
 
-import AppointmentAdapter
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -27,17 +26,16 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.sevayu.Adapters.BlogAdapter
 import com.example.sevayu.R
 import com.example.sevayu.models.Appointments
 import com.example.sevayu.models.Blog
+import com.example.sevayu.ui.Main.adapters.AppointmentAdapter
+import com.example.sevayu.ui.Main.adapters.BlogAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import kotlinx.coroutines.launch
 import java.util.*
 
 
@@ -77,7 +75,7 @@ class HomeFragment : Fragment() {
 
 
             rv.layoutManager=LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
-            rv.adapter=AppointmentAdapter(dummyList,colors)
+            rv.adapter= AppointmentAdapter(dummyList,colors)
         }
     }
 
@@ -232,7 +230,7 @@ class HomeFragment : Fragment() {
 
     val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             _: ActivityResult ->
-            getLastLocation()
+//            getLastLocation()
     }
 
 

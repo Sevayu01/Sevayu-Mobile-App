@@ -7,13 +7,37 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.sevayu.ui.Main.fragments.HomeFragment"
-        android:label="homeFragment" />
+        android:label="homeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_hospitalFragment"
+            app:destination="@id/hospitalFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.sevayu.ui.Main.fragments.SearchFragment"
-        android:label="searchFragment" />
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_hospitalFragment"
+            app:destination="@id/hospitalFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.sevayu.ui.Main.fragments.UserFragment"
         android:label="searchFragment" />
+    <fragment
+        android:id="@+id/hospitalFragment"
+        android:name="com.example.sevayu.ui.Main.fragments.HospitalFragment"
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_hospitalFragment_to_appointmentFinalFragment"
+            app:destination="@id/appointmentFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentFinalFragment"
+        android:name="com.example.sevayu.ui.Main.fragments.AppointmentFinalFragment"
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_appointmentFinalFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
 </navigation>
