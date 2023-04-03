@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager.TAG
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -77,16 +78,18 @@ class SearchFragment : Fragment() {
         binding?.searchResultRv?.adapter = adapter
     }
 
-    @SuppressLint("LongLogTag")
+    @SuppressLint("LongLogTag", "RestrictedApi")
     private fun setObservers() {
         viewModal.performHospitalFetchStatus.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 when (it.status) {
                     Resource.Status.LOADING -> {
+                        Log.e(TAG,"Loading")
                     }
                     Resource.Status.EMPTY -> {
                         binding?.emptyTextView?.visibility = View.VISIBLE
                         binding?.searchResultRv?.visibility = View.GONE
+                        Log.e(TAG,"Empty")
                     }
                     Resource.Status.SUCCESS -> {
                         binding?.emptyTextView?.visibility = View.GONE
@@ -97,11 +100,13 @@ class SearchFragment : Fragment() {
                         Log.e("Search Fragment Result aa gaya" , gameList.toString())
                         binding?.searchResultRv?.smoothScrollBy(0,gameList.size - 1)
                         adapter.submitList(gameList)
+                        Log.e(TAG,"Success")
 
                     }
                     Resource.Status.ERROR -> {
                         binding?.emptyTextView?.visibility = View.VISIBLE
                         binding?.searchResultRv?.visibility = View.GONE
+                        Log.e(TAG,"Error")
                     }
                     else -> {}
                 }

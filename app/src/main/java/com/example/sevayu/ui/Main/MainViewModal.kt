@@ -2,18 +2,17 @@ package com.example.sevayu.ui.Main
 
 import android.annotation.SuppressLint
 import android.util.Log
-import androidx.lifecycle.LiveData
+import android.util.Log.e
+import androidx.constraintlayout.widget.StateSet.TAG
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sevayu.models.game
-import com.example.sevayu.models.gameList
+import com.example.sevayu.models.hospital
 import com.example.sevayu.repository.Resource
 import com.example.sevayu.repository.hospitalRepository
-import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.net.UnknownHostException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -41,6 +40,37 @@ class MainViewModal @Inject constructor(private val hosRepo: hospitalRepository)
             }catch (e : Exception){
                 Log.e("Search View Modal : Search error" , e.toString())
                 performHospitalFetch.value = Resource.error(e)
+            }
+        }
+    }
+
+
+    private val performHospitalDataFetch = MutableLiveData<Resource<hospital>>()
+    val performHospitalDataFetchStatus : MutableLiveData<Resource<hospital>>
+    get() = performHospitalDataFetch
+
+    @SuppressLint("LongLogTag")
+    fun getHospitalData(id : String){
+        viewModelScope.launch {
+            try {
+
+                performHospitalDataFetchStatus.value = Resource.loading()
+                val response = hosRepo.getHospitalData(id)
+
+                if (response.isSuccessful){
+                    Log.d(TAG,"Hospital Data fetch call send ${response.body().toString()}")
+                    if (response.body().toString().isNotEmpty()){
+
+                        performHospitalDataFetch.value = Resource.success(response.body())
+                    }else{
+                        performHospitalDataFetch.value = Resource.empty()
+                    }
+                }else{
+                    Log.d(TAG,"Hospital Data chud gya ${response.toString()}")
+                }
+            }catch (e : Exception){
+                Log.e("Hospital data Mainview model" , e.toString())
+                performHospitalDataFetch.value = Resource.error(e)
             }
         }
     }

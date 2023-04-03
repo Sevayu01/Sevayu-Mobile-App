@@ -23,7 +23,7 @@ class AppointmentFinalFragment : Fragment() {
     lateinit var notificationChannel: NotificationChannel
     lateinit var builder: Notification.Builder
     private val channelId = "i.apps.notifications"
-    private val description = "Test notification"
+    private val description = "com.example.sevayu.models.Test notification"
 
 
     override fun onCreateView(
